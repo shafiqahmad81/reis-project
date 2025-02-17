@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  
+  --breakpoint-3xl: 120rem;
+  --spacing-12-5: 3.125rem; 
+  --spacing-7-5: 1.875rem; 
+
+  /* fonts-family */
+
+  --font-Public: "Public Sans", "sans-serif"; 
+  --font-Roboto: "Roboto", "sans-serif";
+  --font-Inter: "Inter", "sans-serif";
+
+
+
+}
+
+
+
+
+.container {
+  margin-inline: auto;
+  @media (width >= 120rem /* 1920px */) {
+      max-width: var(--breakpoint-3xl) /* 1920px */;
+      padding-inline: var(--spacing-12-5);
+  }
+}

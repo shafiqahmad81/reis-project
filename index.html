@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate Landing Page</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body class="font-sans">
+
+  <!-- Header Section -->
+
+  <header class="bg-white container py-4">
+    <div class=" px-7-5">
+      <div class=" flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#" class="w-[7.5rem]"><img src="src/icon/Logo.png" alt="logo"></a>
+        <!-- Desktop Menu -->
+        <nav class="hidden lg:flex space-x-6">
+          <a href="#" class="text-gray-700 hover:text-blue-600">HOME</a>
+          <a href="#" class="text-gray-700 hover:text-blue-600">ABOUT US</a>
+          <a href="#" class="text-gray-700 hover:text-blue-600">OUR AGENTS</a>
+          <a href="#" class="text-gray-700 hover:text-blue-600">PROPERTIES</a>
+          <a href="#" class="text-gray-700 hover:text-blue-600">GALLERY</a>
+          <a href="#" class="text-gray-700 hover:text-blue-600">BLOG</a>
+          <a href="#" class="text-gray-700 hover:text-blue-600">CONTACT US</a>
+          <a href="#" class="text-gray-700 hover:text-blue-600">SEARCH</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="lg:hidden text-gray-700 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Menu (Hidden by Default) -->
+    <div class=" bg-white absolute left-0 z-20 w-full">
+      <div class="container">
+        <nav id="mobile-menu" class="hidden lg:hidden h-screen px-7-5">
+          <a href="#" class="block py-2  text-gray-700 hover:bg-blue-100 menu-item">HOME</a>
+          <a href="#" class="block py-2  text-gray-700 hover:bg-blue-100 menu-item">ABOUT US</a>
+          <a href="#" class="block py-2  text-gray-700 hover:bg-blue-100 menu-item">OUR AGENTS</a>
+          <a href="#" class="block py-2  text-gray-700 hover:bg-blue-100 menu-item">PROPERTIES</a>
+          <a href="#" class="block py-2  text-gray-700 hover:bg-blue-100 menu-item">GALLERY</a>
+          <a href="#" class="block py-2  text-gray-700 hover:bg-blue-100 menu-item">BLOG</a>
+          <a href="#" class="block py-2  text-gray-700 hover:bg-blue-100 menu-item">CONTACT US</a>
+          <a href="#" class="block py-2  text-gray-700 hover:bg-blue-100 menu-item">SEARCH</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    // Toggle menu
+    menuBtn.addEventListener('click', (event) => {
+      event.stopPropagation(); // Prevent closing when clicking the button
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!mobileMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+
+    // Close menu when clicking a menu item
+    menuItems.forEach(item => {
+      item.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+
+  <!-- Hero Section -->
+  <section
+    class="relative bg-cover bg-center flex flex-col items-center justify-center text-white text-center py-[7.5rem] after:absolute after:top-0 after:bottom-0 after:left-0 after:right-0 after:-z-10 after:content'' after:bg-[#063053] after:opacity-20"
+    style="background-image: url('./src/img/Hero-section.png');">
+    <div class="container">
+      <h1 class="text-[3.25rem] font-Public font-semibold leading-20">Find Your Dream Home</h1>
+      <p class="mt-6 text-xl text-gray-regular! mb-16">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+        posuere cubilia curae; Proin
+        sodales ultrices nulla blandit volutpat.</p>
+      <div class="mb-4">
+        <button class="btn mr-2.5">Rent</button>
+        <button class="btn2">Sale </button>
+      </div>
+
+      <!-- Location -->
+
+      <div class="max-w-full w-[1400px] bg-white text-black py-8 px-8 lg:px-16 mx-auto rounded-lg">
+        <div class="flex items-center justify-between flex-col md:flex-row gap-4 md:text-left text-center">
+          <!-- Column 1: Location -->
+          <div class=" inline-block">
+            <label class="block text-base font-semibold text-black-dark md:mb-4">Location</label>
+            <div class="relative md:-ml-2 text-body font-normal text-base">
+              <select class="appearance-none cursor-pointer  py-2 px-2 pr-6 leading-tight focus:outline-none">
+                <option value="SelectYourCity">Select your city</option>
+                <option value="NewYork">New York</option>
+                <option value="LosAngeles">Los Angeles</option>
+                <option value="Chicago">Chicago</option>
+              </select>
+              <div class="pointer-events-none absolute top-1/2 right-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" fill="none">
+                  <path fill="#4A60A1"
+                    d="M9.766 0h-.88c-.059 0-.115.03-.15.077l-3.33 4.59L2.077.076A.188.188 0 0 0 1.926 0h-.879a.094.094 0 0 0-.076.149l4.132 5.696c.15.207.457.207.606 0L9.84.15A.093.093 0 0 0 9.766 0Z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- Column 2: Property Type -->
+          <div class=" inline-block">
+            <label class="block text-base font-semibold text-black-dark md:mb-4">Property Type</label>
+            <div class="relative md:-ml-2 text-body font-normal text-base">
+              <select class="appearance-none cursor-pointer  py-2 px-2 pr-6 leading-tight focus:outline-none">
+                <option value="SelectYourCity">Select property type</option>
+                <option value="NewYork">New York</option>
+                <option value="LosAngeles">Los Angeles</option>
+                <option value="Chicago">Chicago</option>
+              </select>
+              <div class="pointer-events-none absolute top-1/2 right-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" fill="none">
+                  <path fill="#4A60A1"
+                    d="M9.766 0h-.88c-.059 0-.115.03-.15.077l-3.33 4.59L2.077.076A.188.188 0 0 0 1.926 0h-.879a.094.094 0 0 0-.076.149l4.132 5.696c.15.207.457.207.606 0L9.84.15A.093.093 0 0 0 9.766 0Z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Rent Range -->
+          <div class=" inline-block">
+            <label class="block text-base font-semibold text-black-dark md:mb-4">Rent Range</label>
+            <div class="relative md:-ml-2 text-body font-normal text-base">
+              <select class="appearance-none cursor-pointer  py-2 px-2 pr-6 leading-tight focus:outline-none">
+                <option value="SelectYourCity">Select rent range</option>
+                <option value="NewYork">New York</option>
+                <option value="LosAngeles">Los Angeles</option>
+                <option value="Chicago">Chicago</option>
+              </select>
+              <div class="pointer-events-none absolute top-1/2 right-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" fill="none">
+                  <path fill="#4A60A1"
+                    d="M9.766 0h-.88c-.059 0-.115.03-.15.077l-3.33 4.59L2.077.076A.188.188 0 0 0 1.926 0h-.879a.094.094 0 0 0-.076.149l4.132 5.696c.15.207.457.207.606 0L9.84.15A.093.093 0 0 0 9.766 0Z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 4: Search Button -->
+          <div class="flex items-end">
+            <button class="btn">
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Properties by Area -->
+  <section class="container py-16">
+    <h2 class="text-3xl font-bold text-center">Properties by Area</h2>
+    <p class="text-center mt-2">Discover listings in various locations.</p>
+    <div class="grid grid-cols-3 gap-4 mt-8">
+      <img src="src/img/Card1.png" class="rounded-lg">
+      <img src="src/img/Card2.png" class="rounded-lg">
+      <img src="src/img/Card3.png" class="rounded-lg">
+    </div>
+    <div class="grid grid-cols-2 gap-4 mt-8">
+      <img src="src/img/Card5.png" class="rounded-lg">
+      <img src="src/img/Card5.png" class="rounded-lg">
+    </div>
+  </section>
+
+  <!-- Properties by Area Section -->
+  <section class="py-12 px-6 text-star bg-gray-regular">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold">Our Featured Properties</h2>
+      <p class=" mt-2">Browse some of our top listings</p>
+    </div>
+    <div class="grid grid-cols-4 gap-20 p-6 max-w-[1506px] mx-auto">
+      <!-- Card 1 -->
+      <div class=" p-6 bg-white rounded-2xl shadow-md border border-gray-200 hover:shadow-lg transition-all">
+        <div class="w-[70px]"><img src="./src/icon/homeicon1.png" alt="homeicon"></div>
+        <h3 class="mt-4 text-xl font-semibold">Sell your home</h3>
+        <p class="mt-2 text-gray-600">We do a free evaluation to be sure you want to start selling.</p>
+        <a href="#" class="mt-4 inline-block text-blue-600 hover:underline">Read more</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class=" p-6 bg-white rounded-2xl shadow-md border border-gray-200 hover:shadow-lg transition-all">
+        <div class="w-[70px]"><img src="./src/icon/homeicon2.png" alt="homeicon"></div>
+        <h3 class="mt-4 text-xl font-semibold">Rent your home</h3>
+        <p class="mt-2 text-gray-600">We do a free evaluation to be sure you want to start selling.</p>
+        <a href="#" class="mt-4 inline-block text-blue-600 hover:underline">Read more</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class=" p-6 bg-white rounded-2xl shadow-md border border-gray-200 hover:shadow-lg transition-all">
+        <div class="w-[70px]"><img src="./src/icon/homeicon3.png" alt="homeicon"></div>
+        <h3 class="mt-4 text-xl font-semibold">Buy a home</h3>
+        <p class="mt-2 text-gray-600">We do a free evaluation to be sure you want to start selling.</p>
+        <a href="#" class="mt-4 inline-block text-blue-600 hover:underline">Read more</a>
+      </div>
+
+      <!-- Card 4 -->
+      <div class=" p-6 bg-white rounded-2xl shadow-md border border-gray-200 hover:shadow-lg transition-all">
+        <div class="w-[70px]"><img src="./src/icon/homeicon4.png" alt="homeicon"></div>
+        <h3 class="mt-4 text-xl font-semibold">Free marketing</h3>
+        <p class="mt-2 text-gray-600">We do a free evaluation to be sure you want to start selling.</p>
+        <a href="#" class="mt-4 inline-block text-blue-600 hover:underline">Read more</a>
+      </div>
+    </div>
+  </section>
+
+  <!--Latest Properties Section -->
+
+  <section class=" max-w-[1696px] mx-auto">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold">Our Featured Properties</h2>
+      <p class=" mt-2">Browse some of our top listings</p>
+    </div>
+    <div class="grid grid-cols-4 gap-8">
+
+      <div class="border border-amber-300 px-3.5 pt-4 pb-9 rounded-2xl ">
+        <div>
+          <img src="./src/img/Property-image.png" alt="porperty">
+        </div>
+        <h6>92 ALLIUM PLACE, ORLANDO FL 32827</h6>
+        <span class="dolar">$590,693</span>
+        <div class="flex gap-4 px-2.5 mt-6">
+          <div class="flex items-center gap-1">
+            <img class="w-4" src="./src/icon/Car.png" alt="Car">
+            <span class="text-gray-dark text-[11px] leading-4 font-medium">4</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <img class="w-4" src="./src/icon/Bathtub.png" alt="Bathtub">
+            <span class="text-gray-dark text-[11px] leading-4 font-medium">4</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <img class="w-4" src="./src/icon/ArrowsOut.png" alt="ArrowsOut">
+            <span class="text-gray-dark text-[11px] leading-4 font-medium">2,096.00 ft</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between mt-6">
+          <div class="flex items-center gap-1.5">
+            <img class="w-7" src="./src/img/jenny.jpg" alt="logo-jenny">
+            <span class="text-xs font-medium text-black-light">Jenny Wilson</span>
+          </div>
+          <div class="flex gap-2">
+            <div class="w-5 bg-gray-regular p-1">
+              <img src="./src/icon/share-icon.png" alt="share-icon">
+            </div>
+            <div class="w-5 bg-gray-regular p-1">
+              <img src="./src/icon/Heart.png" alt="heart-icon">
+            </div>
+            <div class="w-5 bg-gray-regular p-1">
+              <img src="./src/icon/Plus.png" alt="Plus-icon">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border border-amber-300 px-3.5 pt-4 pb-9 rounded-2xl ">
+        <div>
+          <img src="./src/img/Property-image.png" alt="porperty">
+        </div>
+        <h6>92 ALLIUM PLACE, ORLANDO FL 32827</h6>
+        <span class="dolar">$590,693</span>
+        <div class="flex gap-4 px-2.5 mt-6">
+          <div class="flex items-center gap-1">
+            <img class="w-4" src="./src/icon/Car.png" alt="Car">
+            <span class="text-gray-dark text-[11px] leading-4 font-medium">4</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <img class="w-4" src="./src/icon/Bathtub.png" alt="Bathtub">
+            <span class="text-gray-dark text-[11px] leading-4 font-medium">4</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <img class="w-4" src="./src/icon/ArrowsOut.png" alt="ArrowsOut">
+            <span class="text-gray-dark text-[11px] leading-4 font-medium">2,096.00 ft</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between mt-6">
+          <div class="flex items-center gap-1.5">
+            <img class="w-7" src="./src/img/jenny.jpg" alt="logo-jenny">
+            <span class="text-xs font-medium text-black-light">Jenny Wilson</span>
+          </div>
+          <div class="flex gap-2">
+            <div class="w-5 bg-gray-regular p-1">
+              <img src="./src/icon/share-icon.png" alt="share-icon">
+            </div>
+            <div class="w-5 bg-gray-regular p-1">
+              <img src="./src/icon/Heart.png" alt="heart-icon">
+            </div>
+            <div class="w-5 bg-gray-regular p-1">
+              <img src="./src/icon/Plus.png" alt="Plus-icon">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border border-amber-300 px-3.5 pt-4 pb-9 rounded-2xl ">
+        <div>
+          <img src="./src/img/Property-image.png" alt="porperty">
+        </div>
+        <h6>92 ALLIUM PLACE, ORLANDO FL 32827</h6>
+        <span class="dolar">$590,693</span>
+        <div class="flex gap-4 px-2.5 mt-6">
+          <div class="flex items-center gap-1">
+            <img class="w-4" src="./src/icon/Car.png" alt="Car">
+            <span class="text-gray-dark text-[11px] leading-4 font-medium">4</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <img class="w-4" src="./src/icon/Bathtub.png" alt="Bathtub">
+            <span class="text-gray-dark text-[11px] leading-4 font-medium">4</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <img class="w-4" src="./src/icon/ArrowsOut.png" alt="ArrowsOut">
+            <span class="text-gray-dark text-[11px] leading-4 font-medium">2,096.00 ft</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between mt-6">
+          <div class="flex items-center gap-1.5">
+            <img class="w-7" src="./src/img/jenny.jpg" alt="logo-jenny">
+            <span class="text-xs font-medium text-black-light">Jenny Wilson</span>
+          </div>
+          <div class="flex gap-2">
+            <div class="w-5 bg-gray-regular p-1">
+              <img src="./src/icon/share-icon.png" alt="share-icon">
+            </div>
+            <div class="w-5 bg-gray-regular p-1">
+              <img src="./src/icon/Heart.png" alt="heart-icon">
+            </div>
+            <div class="w-5 bg-gray-regular p-1">
+              <img src="./src/icon/Plus.png" alt="Plus-icon">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border border-amber-300 px-3.5 pt-4 pb-9 rounded-2xl ">
+        <div>
+          <img src="./src/img/Property-image.png" alt="porperty">
+        </div>
+        <h6>92 ALLIUM PLACE, ORLANDO FL 32827</h6>
+        <span class="dolar">$590,693</span>
+        <div class="flex gap-4 px-2.5 mt-6">
+          <div class="flex items-center gap-1">
+            <img class="w-4" src="./src/icon/Car.png" alt="Car">
+            <span class="text-gray-dark text-[11px] leading-4 font-medium">4</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <img class="w-4" src="./src/icon/Bathtub.png" alt="Bathtub">
+            <span class="text-gray-dark text-[11px] leading-4 font-medium">4</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <img class="w-4" src="./src/icon/ArrowsOut.png" alt="ArrowsOut">
+            <span class="text-gray-dark text-[11px] leading-4 font-medium">2,096.00 ft</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between mt-6">
+          <div class="flex items-center gap-1.5">
+            <img class="w-7" src="./src/img/jenny.jpg" alt="logo-jenny">
+            <span class="text-xs font-medium text-black-light">Jenny Wilson</span>
+          </div>
+          <div class="flex gap-2">
+            <div class="w-5 bg-gray-regular p-1">
+              <img src="./src/icon/share-icon.png" alt="share-icon">
+            </div>
+            <div class="w-5 bg-gray-regular p-1">
+              <img src="./src/icon/Heart.png" alt="heart-icon">
+            </div>
+            <div class="w-5 bg-gray-regular p-1">
+              <img src="./src/icon/Plus.png" alt="Plus-icon">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center mt-10">
+      <button class="btn ">Load more listing</button>
+    </div>
+  </section>
+
+  <!-- Latest Properties for Rent -->
+
+  <section>
+    <div class="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+      <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-4xl">
+        <h2 class="text-3xl font-bold mb-6 text-center">Latest Properties for Rent</h2>
+        <p class="text-gray-600 mb-8 text-center">
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin sodales ultrices
+          nulla blandit volutpat.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="rounded-lg text-center">
+            <img src="src/img/latest-card1.png" alt="Property Image" class="w-full h-40 object-cover rounded-lg mb-4">
+          </div>
+          <div class="rounded-lg text-center">
+            <img src="src/img/latest-card2.png" alt="Property Image" class="w-full h-40 object-cover rounded-lg mb-4">
+          </div>
+          <div class="rounded-lg text-center">
+            <img src="src/img/latest-card3.png" alt="Property Image" class="w-full h-40 object-cover rounded-lg mb-4">
+          </div>
+          <div class="rounded-lg text-center">
+            <img src="src/img/latest-card4.png" alt="Property Image" class="w-full h-40 object-cover rounded-lg mb-4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section class="bg-gray-regular">
+    <div class="max-w-[900px] mx-auto">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold">Contact us</h2>
+        <p class=" mt-2">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin
+          sodales ultrices nulla blandit volutpat.</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-[880px] mx-auto">
+        <form action="#" method="POST" class="space-y-4">
+          <div class="flex gap-4">
+            <input type="text" placeholder="First name" class="w-1/2 p-2 border rounded-lg">
+            <input type="text" placeholder="Last name" class="w-1/2 p-2 border rounded-lg">
+          </div>
+          <input type="email" placeholder="Email" class="w-full p-2 border rounded-lg">
+          <textarea placeholder="Comments or questions" class="w-full p-2 border rounded-lg h-24"></textarea>
+          <div class="flex justify-center">
+            <button type="submit" class="btn w-[210px]">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-white p-12">
+    <div class="max-w-[1820px] mx-auto flex items-start justify-between">
+      <!-- Column 1: Logo, Contact Us, Call, Email, Social Icons -->
+      <div>
+        <div class="text-2xl font-bold mb-4">Logo</div>
+        <p class="mb-2">Contact Us</p>
+        <p class="mb-2">Call: +123 400 123</p>
+        <p class="mb-4">Email: contact@mail.com</p>
+        <div class="flex items-center gap-2">
+          <a href="#" class="social"><img class="w-5" src="./src/icon/facebook.png" alt=""></a>
+          <a href="#" class="social"><img class="w-5" src="./src/icon/dribbble.png" alt=""></a>
+          <a href="#" class="social"><img class="w-5" src="./src/icon/linkdine.png" alt=""></a>
+          <a href="#" class="social"><img class="w-5" src="./src/icon/instagram.png" alt=""></a>
+          <a href="#" class="social"><img class="w-5" src="./src/icon/be.png" alt=""></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Features -->
+      <div>
+        <h3 class="font-bold mb-4">Features</h3>
+        <ul>
+          <li class="mb-2"><a href="#" class="hover:text-gray-400">Home</a></li>
+          <li class="mb-2"><a href="#" class="hover:text-gray-400">Become a Host</a></li>
+          <li class="mb-2"><a href="#" class="hover:text-gray-400">Pricing</a></li>
+          <li class="mb-2"><a href="#" class="hover:text-gray-400">Blog</a></li>
+          <li><a href="#" class="hover:text-gray-400">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Company -->
+      <div>
+        <h3 class="font-bold mb-4">Company</h3>
+        <ul>
+          <li class="mb-2"><a href="#" class="hover:text-gray-400">About Us</a></li>
+          <li class="mb-2"><a href="#" class="hover:text-gray-400">Press</a></li>
+          <li class="mb-2"><a href="#" class="hover:text-gray-400">Contact</a></li>
+          <li class="mb-2"><a href="#" class="hover:text-gray-400">Careers</a></li>
+          <li><a href="#" class="hover:text-gray-400">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Team and Policies -->
+      <div>
+        <h3 class="font-bold mb-4">Team and Policies</h3>
+        <ul>
+          <li class="mb-2"><a href="#" class="hover:text-gray-400">Terms of Services</a></li>
+          <li class="mb-2"><a href="#" class="hover:text-gray-400">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-gray-400">Security</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
