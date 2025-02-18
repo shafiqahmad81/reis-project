@@ -22,6 +22,8 @@
 
   --color-primary: #889099;
   --color-button: #4A60A1;
+  --color-background-bg: #EDEFF6;
+  --color-weeb:#EDEFF6;
   --color-menu: #0F1320;
   --color-h2: #1E2640;
 
@@ -40,6 +42,15 @@ h1{
 
 h2{
   @apply font-semibold leading-12 mb-6 text-center text-4.5xl text-h2
+}
+
+.text{ 
+  @apply text-weeb
+}
+
+
+p{
+  @apply text-primary text-xl
 }
 
 .btn{
