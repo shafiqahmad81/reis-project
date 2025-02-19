@@ -21,13 +21,13 @@
   /* color */
 
   --color-primary: #889099;
+  --color-secondary: #363A3D;
   --color-button: #4A60A1;
   --color-background-bg: #EDEFF6;
-  --color-weeb:#EDEFF6;
   --color-menu: #0F1320;
   --color-h2: #1E2640;
 
-
+  
   /* font size */
 
   --text-h1: 3.25rem;
@@ -36,35 +36,77 @@
 
 }
 
-h1{
-  @apply leading-17 text-h1 font-Public font-semibold
-}
-
-h2{
-  @apply font-semibold leading-12 mb-6 text-center text-4.5xl text-h2
-}
-
-.text{ 
-  @apply text-weeb
-}
 
 
-p{
-  @apply text-primary text-xl
-}
+@layer base{
+  h1{
+    @apply leading-17 text-h1 font-Public font-semibold
+  }
 
-.btn{
-  @apply text-base font-medium leading-6 text-white px-6 py-3 rounded-sm bg-button
-}
+  h2{
+    @apply font-semibold leading-12 mb-6 text-center text-4.5xl text-h2
+  }
 
+  h4{
+    @apply text-2xl font-semibold text-secondary
+  }
 
-
-
-
-.container {
-  margin-inline: auto;
-  @media (width >= 120rem /* 1920px */) {
-      max-width: var(--breakpoint-3xl) /* 1920px */;
-      padding-inline: var(--spacing-12-5);
+  h6{
+    @apply text-sm font-medium text-secondary p-2.5
+  }
+  p{
+    @apply text-primary text-xl
   }
 }
+
+@layer components{
+  .home-p{
+    @apply text-base mt-6
+  }
+
+  .read-more{
+    @apply text-base text-button mt-6 inline-block
+  }
+
+  .btn{
+    @apply text-base font-medium leading-6 text-white px-6 py-3 rounded-sm bg-button
+  }
+
+  .location-label{
+    @apply text-base font-semibold text-[#2C3A61] md:mb-4
+  }
+
+  .location-select{
+    @apply relative md:-ml-2 md:mt-4 text-primary font-normal text-base
+  }
+
+  .price{
+    @apply p-2.5 text-button
+  }
+
+  .listing-detail{
+    @apply text-[#6D737A] text-[11px] leading-4 font-medium
+  }
+  .author{
+    @apply text-xs font-medium text-secondary
+  }
+  .author-social{
+    @apply w-5 bg-background-bg p-1
+  }
+}
+
+
+@layer utilities{
+  .container {
+    padding-inline: var(--spacing-7-5);
+    margin-inline: auto;
+    @media (width >= 120rem /* 1920px */) {
+        max-width: var(--breakpoint-3xl) /* 1920px */;
+        padding-inline: var(--spacing-12-5);
+    }
+  }
+}
+
+
+
+
