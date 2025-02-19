@@ -8,10 +8,11 @@
 
   /* spacing */
 
+  --spacing-21: 5.375rem; 
   --spacing-17: 4.5rem; 
   --spacing-12-5: 3.125rem; 
   --spacing-7-5: 1.875rem; 
-
+  
   /* fonts-family */
 
   --font-Public: "Public Sans", "sans-serif"; 
@@ -55,8 +56,9 @@
     @apply text-sm font-medium text-secondary p-2.5
   }
   p{
-    @apply text-primary text-xl
+    @apply text-primary text-xl text-center
   }
+  
 }
 
 @layer components{
@@ -93,6 +95,12 @@
   .author-social{
     @apply w-5 bg-background-bg p-1
   }
+  .location{
+    @apply text-base font-medium text-white p-0
+  }
+  .field{
+    @apply px-3 py-4 border border-black/50 rounded-xl focus:outline-0 placeholder:text-base placeholder:tracking-[0.009em] placeholder:text-[#9C9C9C]
+  }
 }
 
 
@@ -105,7 +113,9 @@
         padding-inline: var(--spacing-12-5);
     }
   }
+
 }
+
 
 
 
