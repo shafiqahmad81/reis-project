@@ -19,14 +19,25 @@
         <a href="#" class="w-[7.5rem]"><img src="src/icon/Logo.png" alt="logo"></a>
         <!-- Desktop Menu -->
         <nav class="hidden lg:flex space-x-6">
-          <a href="#" class="text-menu text-sm hover:font-semibold px-1.5 py-3">HOME</a>
-          <a href="#" class="text-menu text-sm hover:font-semibold px-1.5 py-3">ABOUT US</a>
-          <a href="#" class="text-menu text-sm hover:font-semibold px-1.5 py-3">OUR AGENTS</a>
-          <a href="#" class="text-menu text-sm hover:font-semibold px-1.5 py-3">PROPERTIES</a>
-          <a href="#" class="text-menu text-sm hover:font-semibold px-1.5 py-3">GALLERY</a>
-          <a href="#" class="text-menu text-sm hover:font-semibold px-1.5 py-3">BLOG</a>
-          <a href="#" class="text-menu text-sm hover:font-semibold px-1.5 py-3">CONTACT US</a>
-          <a href="#" class="text-menu text-sm hover:font-semibold px-1.5 py-3">SEARCH</a>
+          <a href="#" data-title="HOME"
+            class="text-menu nav-menu-item text-sm inline-block hover:font-semibold px-1.5 py-3 after:block after:content-[attr(data-title)] after:font-semibold after:h-0 after:overflow-hidden after:invisible ">HOME</a>
+          <a href="#" data-title="ABOUT US"
+            class="text-menu text-sm inline-block hover:font-semibold px-1.5 py-3 after:block after:content-[attr(data-title)] after:font-semibold after:h-0 after:overflow-hidden after:invisible">ABOUT
+            US</a>
+          <a href="#" data-title="OUR AGENTS"
+            class="text-menu text-sm inline-block hover:font-semibold px-1.5 py-3 after:block after:content-[attr(data-title)] after:font-semibold after:h-0 after:overflow-hidden after:invisible">OUR
+            AGENTS</a>
+          <a href="#" data-title="PROPERTIES"
+            class="text-menu text-sm inline-block hover:font-semibold px-1.5 py-3 after:block after:content-[attr(data-title)] after:font-semibold after:h-0 after:overflow-hidden after:invisible">PROPERTIES</a>
+          <a href="#" data-title="GALLERY"
+            class="text-menu inline-block text-sm hover:font-semibold px-1.5 py-3 after:block after:content-[attr(data-title)] after:font-semibold after:h-0 after:overflow-hidden after:invisible">GALLERY</a>
+          <a href="#" data-title="BLOG"
+            class="text-menu text-sm inline-block hover:font-semibold px-1.5 py-3 after:block after:content-[attr(data-title)] after:font-semibold after:h-0 after:overflow-hidden after:invisible">BLOG</a>
+          <a href="#" data-title="CONTACT US"
+            class="text-menu text-sm inline-block hover:font-semibold px-1.5 py-3 after:block after:content-[attr(data-title)] after:font-semibold after:h-0 after:overflow-hidden after:invisible">CONTACT
+            US</a>
+          <a href="#" data-title="SEARCH"
+            class="text-menu text-sm inline-block hover:font-semibold px-1.5 py-3 after:block after:content-[attr(data-title)] after:font-semibold after:h-0 after:overflow-hidden after:invisible">SEARCH</a>
         </nav>
 
         <!-- Mobile Menu Button -->
@@ -42,15 +53,15 @@
     <!-- Mobile Menu (Hidden by Default) -->
     <div class=" bg-white absolute left-0 pt-3 z-20 w-full">
       <div class="container">
-        <nav id="mobile-menu" class="hidden lg:hidden h-screen">
-          <a href="#" class="block py-2 text-menu text-sm hover:bg-blue-100 menu-item">HOME</a>
-          <a href="#" class="block py-2 text-menu text-sm hover:bg-blue-100 menu-item">ABOUT US</a>
-          <a href="#" class="block py-2 text-menu text-sm hover:bg-blue-100 menu-item">OUR AGENTS</a>
-          <a href="#" class="block py-2 text-menu text-sm hover:bg-blue-100 menu-item">PROPERTIES</a>
-          <a href="#" class="block py-2 text-menu text-sm hover:bg-blue-100 menu-item">GALLERY</a>
-          <a href="#" class="block py-2 text-menu text-sm hover:bg-blue-100 menu-item">BLOG</a>
-          <a href="#" class="block py-2 text-menu text-sm hover:bg-blue-100 menu-item">CONTACT US</a>
-          <a href="#" class="block py-2 text-menu text-sm hover:bg-blue-100 menu-item">SEARCH</a>
+        <nav id="mobile-menu" class="hidden lg:hidden h-screen -ml-2">
+          <a href="#" class="block p-2 text-menu text-sm hover:bg-blue-100 menu-item">HOME</a>
+          <a href="#" class="block p-2 text-menu text-sm hover:bg-blue-100 menu-item">ABOUT US</a>
+          <a href="#" class="block p-2 text-menu text-sm hover:bg-blue-100 menu-item">OUR AGENTS</a>
+          <a href="#" class="block p-2 text-menu text-sm hover:bg-blue-100 menu-item">PROPERTIES</a>
+          <a href="#" class="block p-2 text-menu text-sm hover:bg-blue-100 menu-item">GALLERY</a>
+          <a href="#" class="block p-2 text-menu text-sm hover:bg-blue-100 menu-item">BLOG</a>
+          <a href="#" class="block p-2 text-menu text-sm hover:bg-blue-100 menu-item">CONTACT US</a>
+          <a href="#" class="block p-2 text-menu text-sm hover:bg-blue-100 menu-item">SEARCH</a>
         </nav>
       </div>
     </div>
@@ -280,7 +291,7 @@
             </div>
           </div>
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-1.5">
+            <div class="flex items-center gap-1.5 cursor-pointer">
               <img class="w-7" src="./src/img/jenny.jpg" alt="logo-jenny">
               <span class="author">Jenny Wilson</span>
             </div>
@@ -318,7 +329,7 @@
             </div>
           </div>
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-1.5">
+            <div class="flex items-center gap-1.5 cursor-pointer">
               <img class="w-7" src="./src/img/jenny.jpg" alt="logo-jenny">
               <span class="author">Jenny Wilson</span>
             </div>
@@ -356,7 +367,7 @@
             </div>
           </div>
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-1.5">
+            <div class="flex items-center gap-1.5 cursor-pointer">
               <img class="w-7" src="./src/img/jenny.jpg" alt="logo-jenny">
               <span class="author">Jenny Wilson</span>
             </div>
@@ -394,7 +405,7 @@
             </div>
           </div>
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-1.5">
+            <div class="flex items-center gap-1.5 cursor-pointer">
               <img class="w-7" src="./src/img/jenny.jpg" alt="logo-jenny">
               <span class="author">Jenny Wilson</span>
             </div>
@@ -433,7 +444,7 @@
       <div class="max-w-[1600px] mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
         <div class="rounded-lg text-center relative">
           <div class="lcation-item">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 cursor-pointer">
               <img class="w-6" src="./src/icon/location-icon.png" alt="location">
               <h6 class="location">Washington</h6>
             </div>
@@ -446,7 +457,7 @@
         </div>
         <div class="rounded-lg text-center relative">
           <div class="lcation-item">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 cursor-pointer">
               <img class="w-6" src="./src/icon/location-icon.png" alt="location">
               <h6 class="location">Washington</h6>
             </div>
@@ -459,7 +470,7 @@
         </div>
         <div class="rounded-lg text-center relative">
           <div class="lcation-item">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 cursor-pointer">
               <img class="w-6" src="./src/icon/location-icon.png" alt="location">
               <h6 class="location">Washington</h6>
             </div>
@@ -472,7 +483,7 @@
         </div>
         <div class="rounded-lg text-center relative">
           <div class="lcation-item">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 cursor-pointer">
               <img class="w-6" src="./src/icon/location-icon.png" alt="location">
               <h6 class="location">Washington</h6>
             </div>
@@ -500,7 +511,8 @@
       </div>
       <div class="bg-white py-7 px-7-5 mt-10 rounded-xl w-full max-w-[880px] mx-auto font-Roboto">
         <h4 class="text-[#434343] font-bold">Enquiry Form</h4>
-        <p class="text-lg text-start mt-1.5 text-[#576074]">Are you looking for details about a certain property? Ask us
+        <p class="text-sm md:text-lg text-start mt-1.5 text-[#576074]">Are you looking for details about a certain
+          property? Ask us
           a question
           using the
           form below.

@@ -115,6 +115,8 @@
     box-shadow: 0px 24px 68px rgba(59, 77, 129, 0.08);
     @apply p-4 xl:p-6 bg-white rounded-2xl space-y-6
   }
+
+
 }
 
 
