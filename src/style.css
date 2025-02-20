@@ -23,6 +23,7 @@
 
   --color-primary: #889099;
   --color-secondary: #363A3D;
+  --color-secondary-gray: #6D737A;
   --color-button: #4A60A1;
   --color-background-bg: #EDEFF6;
   --color-menu: #0F1320;
@@ -41,37 +42,37 @@
 
 @layer base{
   h1{
-    @apply leading-17 text-h1 font-Public font-semibold
+    @apply md:leading-17 text-4.5xl sm:text-5xl md:text-h1 font-Public font-semibold
   }
 
   h2{
-    @apply font-semibold leading-12 mb-6 text-center text-4.5xl text-h2
+    @apply font-semibold md:leading-12 mb-6 text-center text-3xl md:text-4.5xl text-h2
   }
 
   h4{
-    @apply text-2xl font-semibold text-secondary
+    @apply text-xl md:text-2xl font-semibold text-secondary
   }
 
   h6{
     @apply text-sm font-medium text-secondary p-2.5
   }
   p{
-    @apply text-primary text-xl text-center
+    @apply text-primary text-base md:text-xl text-center
   }
   
 }
 
 @layer components{
   .home-p{
-    @apply text-base mt-6
+    @apply text-sm md:text-base text-start
   }
 
   .read-more{
-    @apply text-base text-button mt-6 inline-block
+    @apply text-base text-button inline-block
   }
 
   .btn{
-    @apply text-base font-medium leading-6 text-white px-6 py-3 rounded-sm bg-button
+    @apply text-base font-medium leading-6 text-white px-6 py-3 rounded-sm bg-button cursor-pointer
   }
 
   .location-label{
@@ -87,8 +88,10 @@
   }
 
   .listing-detail{
-    @apply text-[#6D737A] text-[11px] leading-4 font-medium
+    @apply text-secondary-gray text-[11px] leading-4 font-medium
   }
+
+
   .author{
     @apply text-xs font-medium text-secondary
   }
@@ -98,15 +101,26 @@
   .location{
     @apply text-base font-medium text-white p-0
   }
+  .lcation-item{
+    @apply flex items-center justify-between gap-2 absolute bottom-6 left-3 md:left-6 right-3 md:right-6
+  }
   .field{
     @apply px-3 py-4 border border-black/50 rounded-xl focus:outline-0 placeholder:text-base placeholder:tracking-[0.009em] placeholder:text-[#9C9C9C]
+  }
+  .social{
+    @apply rounded-sm w-10 md:w-12 p-2 md:p-3.5 bg-background-bg
+  }
+
+  .home-shadow{
+    box-shadow: 0px 24px 68px rgba(59, 77, 129, 0.08);
+    @apply p-4 xl:p-6 bg-white rounded-2xl space-y-6
   }
 }
 
 
 @layer utilities{
   .container {
-    padding-inline: var(--spacing-7-5);
+    @apply px-4;
     margin-inline: auto;
     @media (width >= 120rem /* 1920px */) {
         max-width: var(--breakpoint-3xl) /* 1920px */;
